@@ -44,7 +44,7 @@ public class CollegeMain {
 
     public static void main(String[] args) {
         List<Country> countries = getCountry();
-        if (Objects.nonNull(countries)){
+        if (Objects.isNull(countries)){
             System.out.println("inside the if block");
             countries.forEach(a-> System.out.println(a));
         }
@@ -56,6 +56,8 @@ public class CollegeMain {
     private static List<Country> getCountry() {
         List<Country> countries = null;
         Country country = new Country();
+        country.setCountryName("xyz");
+        country.setId(1);
         countries.add(country);
         return countries;
     }
