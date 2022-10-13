@@ -18,6 +18,7 @@ public class RoundFigureManuallyLogic {
             System.out.println("DO YOU EXECUTE AGAIN?    Y/N");
             String executedOrNot = i.next();
             if (!executedOrNot.equalsIgnoreCase("y")) {
+                System.out.println("Execution is Terminated & Thanks !!");
                 break;
             }
         }
