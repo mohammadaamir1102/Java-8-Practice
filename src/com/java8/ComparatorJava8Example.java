@@ -22,6 +22,7 @@ public class ComparatorJava8Example {
 		bookData.add(new StudentBook(5, "Servlet", 100));
 		bookData.add(new StudentBook(6, "PHP", 100));
 		List<StudentBook> sortingData = methodForShorting(bookData);
+		System.out.println("size is "+sortingData.size());
 //		Collections.sort(bookData, (o1, o2) -> o1.getBookName().compareTo(o2.getBookName()));
 		return sortingData;
 
