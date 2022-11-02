@@ -1,5 +1,6 @@
 package com.java8;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,5 +21,15 @@ public class MapVsFlatMap {
         List<String> convertPhonesIntoSingleListByFlatMapMethod = bankingData.stream()
                 .flatMap(phone -> phone.getAccountHolderPhoneNumber().stream()).collect(Collectors.toList());
         convertPhonesIntoSingleListByFlatMapMethod.forEach(System.out::println);
+        List<Bank> fltr = new ArrayList<>();
+        bankingData.stream().map(a -> {
+            if (a.getAccountHolderName().startsWith("aas")
+                    || a.getAccountHolderName().startsWith("aaq")
+                    || a.getAccountHolderName().startsWith("ar")) {
+                fltr.add(a);
+            }
+            return fltr;
+        }).collect(Collectors.toList());
+       fltr.forEach(a-> System.out.println("filtered List"+a));
     }
 }
