@@ -8,7 +8,7 @@ public class ExceptionSession {
     public static void main(String[] args) throws IOException {
         Set<StudentHashCodeAndEqualsMethod> set = new HashSet<>();
         set.add(new StudentHashCodeAndEqualsMethod(1l, "aamir"));
-        set.add(new StudentHashCodeAndEqualsMethod(1l, "aasim"));
+        set.add(new StudentHashCodeAndEqualsMethod(2l, "aasim"));
         set.forEach(itr -> System.out.println(itr));
     }
 }
