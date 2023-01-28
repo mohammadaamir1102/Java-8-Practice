@@ -8,6 +8,14 @@ public class MapVsFlatMap {
 
     public static void main(String[] args) {
         List<Bank> bankingData = BankingDatabase.getAll();
+        List<Bank> updatedData = new ArrayList<>();
+       bankingData.forEach(updateName ->{
+           if(updateName.getAccountHolderName().equalsIgnoreCase("aamir")){
+               updateName.setAccountHolderName("Shahrukh khan");
+               updatedData.add(updateName);
+           }
+       });
+
         //here we are getting the name and store into another list = know as a data transformation
         //here map use for one to one mapping
         List<String> accountHolderNames = bankingData.stream()

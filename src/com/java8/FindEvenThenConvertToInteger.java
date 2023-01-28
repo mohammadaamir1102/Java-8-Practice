@@ -1,5 +1,6 @@
 package com.java8;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -15,8 +16,17 @@ public class FindEvenThenConvertToInteger {
         Optional<Integer> first = collect.stream().findFirst();
         Optional<Integer> firstAny = collect.stream().findAny();
         if (first.isPresent() || firstAny.isPresent()) {
-            System.out.println(first + " " + firstAny);
+            System.out.println(first.get() + " " + firstAny);
         }
+
+        Bank bank = new Bank();
+
+        List<String> accountHolderPhoneNumber = bank.getAccountHolderPhoneNumber();
+        System.out.println(accountHolderPhoneNumber);
+        if(accountHolderPhoneNumber==null){
+            System.out.println("aamir");
+        }
+
     }
 
 }
