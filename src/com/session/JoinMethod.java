@@ -3,6 +3,7 @@ package com.session;
 public class JoinMethod {
 
     public static void main(String[] args) {
+<<<<<<< HEAD
         try {
             int no = 10;
             callingMEthod();
@@ -10,6 +11,17 @@ public class JoinMethod {
             System.out.println(e);
 
         }
+=======
+     try{
+         int no =10;
+         callingMEthod(no);
+     }
+     catch (Exception e)
+     {
+         System.out.println("parent catch");
+         e.printStackTrace();
+     }
+>>>>>>> 85995503eb7a621d29e928562f060569bc7cdaa1
 
     }
 
@@ -18,6 +30,7 @@ public class JoinMethod {
             callingAnotherMessage();
         } catch (Exception e) {
 
+<<<<<<< HEAD
             throw new Exception("callingmethod");
         }
     }
@@ -31,5 +44,16 @@ public class JoinMethod {
                 throw new Exception("calling another method");
             }
         }
+=======
+           try {
+               int resutl = no/0;
+               System.out.println(resutl);
+           }
+           catch (Exception e)
+           {
+               System.out.println("child catdh");
+               System.out.println(e);
+           }
+>>>>>>> 85995503eb7a621d29e928562f060569bc7cdaa1
     }
 }

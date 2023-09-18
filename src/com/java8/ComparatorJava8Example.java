@@ -1,30 +1,26 @@
 package com.java8;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class ComparatorJava8Example {
 
 	List<StudentBook> bookData = null;
 	public static void main(String[] args) {
-		ComparatorJava8Example comparatorJava8Example = new ComparatorJava8Example();
-		List<StudentBook> studentBook = getStudentBook();
+		List<StudentBook> studentBook = ComparatorJava8Example.getStudentBook();
 		studentBook.forEach(System.out::println);
-//		Map<Integer , List<String>> records = studentBook.stream()
-//				.collect(Collectors.groupingBy(StudentBook::getId)).entrySet().stream()
-//				.collect(Collectors.toMap(Map.Entry::getKey, e -> e.getValue()
-//						.stream().map(StudentBook::getPages).collect(Collectors.toList())));
 	}
-
 
 	public static List<StudentBook> getStudentBook() {
 		List<StudentBook> bookData = new ArrayList<>();
-		bookData.add(new StudentBook(1, "Java", 10081));
-		bookData.add(new StudentBook(2, "Hibernate", 13534));
-		bookData.add(new StudentBook(3, "Mysql", 134534));
-		bookData.add(new StudentBook(1, "Java", 6756));
-		bookData.add(new StudentBook(5, "Servlet", 23423));
-		bookData.add(new StudentBook(2, "Hibernate", 365654));
+		bookData.add(new StudentBook(1, "Java", 100));
+		bookData.add(new StudentBook(2, "Hibernate", 100));
+		bookData.add(new StudentBook(3, "Mysql", 100));
+		bookData.add(new StudentBook(4, "JSP", 100));
+		bookData.add(new StudentBook(5, "Servlet", 100));
+		bookData.add(new StudentBook(6, "PHP", 100));
 		List<StudentBook> sortingData = methodForShorting(bookData);
 		System.out.println("size is "+sortingData.size());
 //		Collections.sort(bookData, (o1, o2) -> o1.getBookName().compareTo(o2.getBookName()));
@@ -37,6 +33,4 @@ public class ComparatorJava8Example {
 				.collect(Collectors.toList());
 		return sortingData;
 	}
-
-
 }

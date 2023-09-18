@@ -1,10 +1,8 @@
 package com.java8;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class StreamSorting {
 
@@ -28,6 +26,9 @@ public class StreamSorting {
 		System.out.println("______________________________________");
 		Collections.sort(college, Comparator.comparing(College::getCollegeESTD));
 		college.forEach(System.out::println);
-		
+		college.forEach(a->System.out.println(a));
+		System.out.println("below grouping ");
+		Map<Integer, List<College>> collect = college.stream().collect(Collectors.groupingBy(College::getCollegeID));
+		collect.forEach((k,v) -> System.out.println(k +" "+v));
 	}
 }
