@@ -1,7 +1,5 @@
 package com.session;
-
 import java.util.*;
-
 public class ArrayListBookObjectExample {
     public static void main(String[] args) {
         List<BookOfList> bookDetails = getElements();

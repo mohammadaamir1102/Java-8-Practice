@@ -3,25 +3,33 @@ package com.session;
 public class JoinMethod {
 
     public static void main(String[] args) {
-     try{
-         int no =10;
-         callingMEthod(no);
-     }catch (Exception e){
-         System.out.println("parent catch");
-         e.printStackTrace();
-     }
+        try {
+            int no = 10;
+            callingMEthod();
+        } catch (Exception e) {
+            System.out.println(e);
+
+        }
 
     }
 
-    private static void callingMEthod(int no) throws Exception {
+    private static void callingMEthod() throws Exception {
+        try {
+            callingAnotherMessage();
+        } catch (Exception e) {
 
-           try {
-               int resutl = no/0;
-               System.out.println(resutl);
-           }catch (Exception e){
-               System.out.println("child catdh");
-               System.out.println(e);
-           }
+            throw new Exception("callingmethod");
+        }
+    }
 
+    private static void callingAnotherMessage() throws Exception {
+        {
+            try {
+                int a = 10 / 0;
+            } catch (ArithmeticException e) {
+                System.out.println(e);
+                throw new Exception("calling another method");
+            }
+        }
     }
 }

@@ -1,12 +1,8 @@
 package com.java8;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class MapEntityForSorting {
@@ -41,6 +37,14 @@ public class MapEntityForSorting {
 		
 		map.entrySet().stream().sorted(Map.Entry.comparingByValue()).forEach(System.out::println);
 		System.out.println("_______above example as a stream approach way_________");
+
+		List<StudentBook> studentBook = ComparatorJava8Example.getStudentBook();
+		Map<Integer, StudentBook> collect = studentBook.stream().collect(Collectors.
+				toMap(StudentBook::getId, Function.identity(), (oldValue, newValue) -> newValue));
+		collect.entrySet().stream()
+				.sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
+				.forEach(System.out::println);
+//		collect.forEach((k,v)-> System.out.println(k + " "+ v));
 	}
 
 }

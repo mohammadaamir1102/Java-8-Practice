@@ -1,19 +1,32 @@
 package com.session;
 
-import java.util.HashMap;
-import java.util.Map;
+
+import java.util.Objects;
 
 public class Practice {
-    public static void main(String[] args) {
-        Map<String, HashMap<String, String>> map = new HashMap<>();
-        HashMap<String, String> innerMap = new HashMap<>();
-        innerMap.put("DEFERMENT_PERIOD", "NUMBER");
-        map.put("PROPOSAL_ADD_DTL", innerMap);
 
-        for(Map.Entry m:map.entrySet()){
-            System.out.println(m.getKey()+" "+m.getValue());
+    public static void main(String[] args) {
+        try {
+            method1();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Catch block");
         }
-        String s = map.get("PROPOSAL_ADD_DTL".toUpperCase()).get("DEFERMENT_PERIOD".toUpperCase());
-        System.out.println(s);
+
     }
+
+    private static void method1() {
+        method2();
+
+    }
+
+    private static void method2() {
+        method3();
+    }
+
+    private static void method3() {
+        int a = 10 / 0;
+        System.out.println(a);
+    }
+
 }

@@ -18,16 +18,16 @@ public class StreamSorting {
 		college.add(new College(76, "KDC", "Basti", LocalDate.of(1938, 05, 01)));
 		college.add(new College(65, "APNPGC", "Basti", LocalDate.of(2005, 05, 01)));
 		// here also will be use method reference
-		Collections.sort(college, Comparator.comparingInt(idBaseShorting -> idBaseShorting.getCollegeID()));
-		college.forEach(a -> System.out.println(a));
+		Collections.sort(college, Comparator.comparingInt(College::getCollegeID));
+		college.forEach(System.out::println);
 		System.out.println("______________________________________");
 		
-		Collections.sort(college, Comparator.comparing(dateBaseSorting -> dateBaseSorting.getCollegeESTD()));
-		college.forEach(a -> System.out.println(a));
+		Collections.sort(college, Comparator.comparing(College::getCollegeESTD));
+		college.forEach(System.out::println);
 		
 		System.out.println("______________________________________");
 		Collections.sort(college, Comparator.comparing(College::getCollegeESTD));
-		college.forEach(a->System.out.println(a));
+		college.forEach(System.out::println);
 		
 	}
 }
