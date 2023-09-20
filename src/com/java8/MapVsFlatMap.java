@@ -8,17 +8,13 @@ public class MapVsFlatMap {
 
     public static void main(String[] args) {
         List<Bank> bankingData = BankingDatabase.getAll();
-<<<<<<< HEAD
-
-=======
         List<Bank> updatedData = new ArrayList<>();
-       bankingData.forEach(updateName ->{
-           if(updateName.getAccountHolderName().equalsIgnoreCase("aamir")){
-               updateName.setAccountHolderName("Shahrukh khan");
-               updatedData.add(updateName);
-           }
-       });
->>>>>>> 85995503eb7a621d29e928562f060569bc7cdaa1
+        bankingData.forEach(updateName -> {
+            if (updateName.getAccountHolderName().equalsIgnoreCase("aamir")) {
+                updateName.setAccountHolderName("Shahrukh khan");
+                updatedData.add(updateName);
+            }
+        });
 
         //here we are getting the name and store into another list = know as a data transformation
         //here map use for one to one mapping
@@ -42,6 +38,6 @@ public class MapVsFlatMap {
             }
             return fltr;
         }).collect(Collectors.toList());
-       fltr.forEach(a-> System.out.println("filtered List"+a));
+        fltr.forEach(a -> System.out.println("filtered List" + a));
     }
 }
